@@ -43,4 +43,9 @@ public class ItemToSell {
 	return cost;
     }
 
+    @Override
+    public String toString() {
+	return "Name: " + name + " | Cost: " + String.format("%.2f", cost) + " | Seller: " + seller;
+    }
+
 }
