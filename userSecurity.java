@@ -24,8 +24,7 @@ public class userSecurity{
 		
 		Scanner s = new Scanner(File(userPasswords.txt));
 		while (s.hasNext()){
-			userPasswords.add(s.next());
-		}
+			userPasswords.add(s.next());		}
 		s.close();
 	}
 
@@ -57,7 +56,7 @@ public class userSecurity{
 	}
 
 	//Checks the see if access to user info should be given.
-	protected bool Access(String name, String pass){
+	public bool Access(String name, String pass){
 		int arrayIndex = doesUserExist(name);
 		bool canAccess;
 		if (arrayIndex > -1) {
