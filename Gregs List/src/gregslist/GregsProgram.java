@@ -1,11 +1,12 @@
-package gregslist;
+package d141;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-import gregslist.users.FreeUser;
-import gregslist.users.PremiumUser;
+import d141.users.FreeUser;
+import d141.users.PremiumUser;
 
 public class GregsProgram {
 
@@ -17,7 +18,7 @@ public class GregsProgram {
 
     // These are here b/c they are only used in this class
     private static final byte numFreeOptions = 4, numPremOptions = 6;
-
+    private static String username;
     /**
      * Handles a sale to a user
      *
@@ -111,16 +112,36 @@ public class GregsProgram {
 	    userType = input.next().toLowerCase();
 	    System.out.println("\nType entered: " + userType);
 	}
-	System.out.println("Please enter your username: ");
-	String name = input.next();
-	// Can hold both types of user
-	FreeUser user = getUserFromType(userType.charAt(0), name);
+	
+	
+	HashMap<String, String> map = new HashMap<String, String>();	
+	
+	
+	   Scanner sc = new Scanner(System.in);
+	  map.put("username","username");
+	  map.put("password","password");  
+	  System.out.println(map);
+	  
+	  
+	  System.out.println("Enter username");
+	  username = sc.nextLine();
+
+	  if(map.containsKey(username))
+	  {
+		  
+		  System.out.println("Enter password");
+		  String password = sc.nextLine();
+	  
+	    if(map.containsKey(password)) {
+	     //can hold both types of user
+	FreeUser user = getUserFromType(userType.charAt(0), username);
 
 	// Checks if the getUserFromType method returned null. CRASH LOUDLY!
 	if (user == null) {
 	    System.err.println("User type was not set correctly! Exiting...");
 	    System.exit(0);
 	}
+
 	// TODO: Remove this line? (was test)
 	System.out.println("Premium User: " + user.isPremium());
 
@@ -131,9 +152,7 @@ public class GregsProgram {
 	    printOptions(user);
 	    System.out.print("Please enter a number (0 - " + getMaxOption(user) + "): ");
 	    selectOption(user);
-	}
-    }
-
+	}}}}
     /**
      * Prints to the console the options for a specific user
      *
