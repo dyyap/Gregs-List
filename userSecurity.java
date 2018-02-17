@@ -13,10 +13,8 @@ public class userSecurity{
 	private ArrayList<String> userPass = new ArrayList<String>();	//ArrayList for passwords in file userPasswords.txt
 
 	/**userSecurity constructor
-		@param name is the user name to check for existance;
+		Fills ArrayList from files.
 	*/
-
-	//fill both ArrayList from Files.
 	public userSecurity(){
 		Scanner s = new Scanner(File(userNames.txt));
 		while (s.hasNext()){
