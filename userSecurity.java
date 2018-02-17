@@ -67,7 +67,7 @@ public class userSecurity{
 				
 			}
 		}	
-		elseif (arrayIndex == -1) {
+		else if (arrayIndex == -1) {
 			System.out.println("The user name does not exist.");
 		}
 		
